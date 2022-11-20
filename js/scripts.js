@@ -1,34 +1,4 @@
-// function newitem() {}
-
-// let input = $("input");
-// input.parent(); // Get the parent element
-// input.children(); // Get all children
-// input.closest(".container"); // Go up the hierarchy of parents until the selector matches
-// input.siblings();
-
-// li.on("click", function () {
-//   li.addclass("strike");
-// });
-
-// $("body").append(newElement);
-
-// $("input").each(function (i) {
-//   let inputValue = $(this).val();
-//   let inputName = $(this).attr("name");
-//   if (inputValue().length < 1) {
-//     console.log("Please fill out the" + inputName + " field");
-//   }
-// });
-
-// inputs.get(0);
-
-// $("input").on("click", function (event) {});
-// $("input").off("click");
-
-// li.addClass("delete");
-
-//////////////////////////////////////
-function newItem() {
+function newitem() {
   let li = $("<li></li>");
   let inputValue = $("#input").val();
   li.append(inputValue);
@@ -36,14 +6,18 @@ function newItem() {
   if (inputValue === "") {
     alert("Add a list item!");
   } else {
-    $("#list").appendChild(li);
+    $("#list").append(li);
+  }
+  function crossout() {
+    li.toggleClass("strike");
   }
 
-  li.on("dblclick", function () {
-    li.addClass("strike");
+  li.on("dblclick", function crossout() {
+    li.toggleClass("strike");
   });
-  let crossOutButton = $('<Button class="crossOutButton">X</button>');
-  li.appendChild(crossOutButton);
+  let crossOutButton = $("<crossOutButton>X</crossOutButton>");
+  crossOutButton.append(document.createTextNode("x"));
+  li.append(crossOutButton);
 
   crossOutButton.on("click", deleteListItem);
   function deleteListItem() {
