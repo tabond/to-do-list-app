@@ -1,4 +1,4 @@
-function newitem() {
+function newItem() {
   let li = $("<li></li>");
   let inputValue = $("#input").val();
   li.append(inputValue);
@@ -16,7 +16,6 @@ function newitem() {
     li.toggleClass("strike");
   });
   let crossOutButton = $("<crossOutButton>X</crossOutButton>");
-  crossOutButton.append(document.createTextNode("x"));
   li.append(crossOutButton);
 
   crossOutButton.on("click", deleteListItem);
